@@ -7,7 +7,7 @@ function route(app) {
   });
 
                               app.get('/search', (req, res) => {
-                        res.render('search');
+                          res.render('search');
                       });
 
   app.post('/search', (req, res) => {
