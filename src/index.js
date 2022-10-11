@@ -1,11 +1,11 @@
-const express = require("express");
-const morgan = require("morgan");
-const path = require("path");
-const { engine } = require("express-handlebars");
+const express = require('express');
+const morgan = require('morgan');
+const path = require('path');
+const { engine } = require('express-handlebars');
 const app = express();
 const port = 3000;
-const routes = require("./routes");
-app.use(express.static(path.join(__dirname, "public")));
+const routes = require('./routes');
+app.use(express.static(path.join(__dirname, 'public')));
 //http loger
 // app.use(morgan("combined"))
 
@@ -13,14 +13,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //template engine
 app.engine(
-  "hbs",
+  'hbs',
   engine({
-    extname: "hbs",
-  })
+    extname: 'hbs',
+  }),
 );
-app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "resources/views"));
-
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resources/views'));
 
 // Route init
 
