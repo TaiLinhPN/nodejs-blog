@@ -1,29 +1,29 @@
 <h1>create here</h1>
 
-<form class="row g-3 needs-validation" novalidate>
+<form method="POST" action="/courses/store" class="row g-3 needs-validation" >
   <div class="col-md-6 position-relative">
     <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name">
+    <input type="text" class="form-control" id="name" name="name">
   </div>
 
   <div class="col-md-6 position-relative">
     <label for="image" class="form-label">image</label>
-    <input type="text" class="form-control" id="image">
+    <input type="text" class="form-control" id="image" name="image">
   </div>
 
   <div class="col-md-6 position-relative">
     <label for="slug" class="form-label">slug</label>
-    <input type="text" class="form-control" id="slug">
+    <input type="text" class="form-control" id="slug" name="slug">
   </div>
 
   <div class="col-md-6 position-relative">
     <label for="description" class="form-label">description</label>
-    <input type="text" class="form-control" id="description">
+    <input type="text" class="form-control" id="description" name="description">
   </div>
 
   <div class="col-md-6 position-relative">
     <label for="youtubeId" class="form-label">youtubeId</label>
-    <input type="text" class="form-control" id="youtubeId">
+    <input type="text" class="form-control" id="youtubeId" name="youtubeId">
   </div>
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Submit form</button>

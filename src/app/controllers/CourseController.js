@@ -25,8 +25,17 @@ class CourseController {
       .catch(next);
   }
 
+  // [GET]
   create(req, res, next) {
     res.render("courses/create");
+  }
+
+  // [POST]
+  store(req, res, next) {
+    console.log(req.body);
+    res.json(req.body);
+
+    // res.render("courses/create");
   }
 }
 
