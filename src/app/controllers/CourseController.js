@@ -4,7 +4,6 @@ const {
   multipleMongooseToObject,
 } = require("../../util/mongoose");
 class CourseController {
-
   index(req, res, next) {
     Course.find()
       .then((course) =>
@@ -24,6 +23,10 @@ class CourseController {
         })
       )
       .catch(next);
+  }
+
+  create(req, res, next) {
+    res.render("courses/create");
   }
 }
 
