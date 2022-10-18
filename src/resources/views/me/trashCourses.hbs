@@ -1,0 +1,39 @@
+<table class="table">
+  <div>
+<h1>Trash </h1>
+    <a href="/me/stored/courses">My course</a>
+
+  </div>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">description</th>
+      <th scope="col">Id Youtobe</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each course}}
+      <tr>
+        <th scope="row">{{sum @index 1}}</th>
+        <td>{{this.name}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.youtubeId}}</td>
+        <td>
+          <form method="POST" action="/courses/{{this._id}}/restore?_method=PATCH">
+            <button type="submit">Restore</button>
+          </form>
+          <form method="POST" action="/courses/{{this._id}}/destroy?_method=DELETE">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    {{else}}
+
+    <div>
+      <p>trash is null <a href="/courses/create">thêm khóa học</a></p>
+    </div>
+    {{/each}}
+  </tbody>
+</table>

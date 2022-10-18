@@ -1,0 +1,38 @@
+<table class="table">
+  <div>
+    <h1>My course</h1>
+    <a href="/me/trash/courses">Trash({{deletedCount}})</a>
+  </div>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name <a href="?_sort&column=name&type=desc">sort</a></th>
+      <th scope="col">description</th>
+      <th scope="col">Id Youtobe</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each course}}
+      <tr>
+        <th scope="row">{{sum @index 1}}</th>
+        <td>{{this.name}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.youtubeId}}</td>
+        <td>
+          <a href="/courses/{{this._id}}/edit"><button
+              type="submit"
+            >Update</button></a>
+          <form method="POST" action="/courses/{{this._id}}?_method=DELETE">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    {{else}}
+
+    <div>
+      <p>bạn chưa có khóa học nào <a href="/courses/create">thêm khóa học</a></p>
+    </div>
+    {{/each}}
+  </tbody>
+</table>
